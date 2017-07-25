@@ -1,0 +1,82 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="WebApplication1.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="ru">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %>– мое приложение ASP.NET</title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+
+    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+</head>
+<body>
+    <form runat="server">
+
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" runat="server" href="~/">Калькулятор</a>
+                </div>
+               
+            </div>
+        </div>
+        <div class="container body-content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+&nbsp;&nbsp;
+        </div>
+        <asp:Panel ID="Panel1" runat="server">
+        </asp:Panel>
+        <div class="text-center">
+            <asp:TextBox ID="TextBox1" runat="server" Width="190px" OnTextChanged="TextBox1_TextChanged" Height="22px"></asp:TextBox>
+            <br />
+            <br />
+        <br />
+        </div>
+        <p class="text-center">
+            <asp:Button ID="b1" runat="server" BackColor="Aqua" Height="30px" OnClick="b1_Click" Text="1" Width="50px" />
+            <asp:Button ID="b2" runat="server" BackColor="Aqua" Height="30px" OnClick="b2_Click" Text="2" Width="50px" />
+        <asp:Button ID="b3" runat="server" OnClick="b3_Click" Text="3" BackColor="Aqua" Height="30px" Width="50px" />
+        <asp:Button ID="bdel" runat="server" Text="/" BackColor="#3399FF" Height="30px" OnClick="bdel_Click" Width="50px" />
+            <asp:Button ID="btochka" runat="server" BackColor="#3399FF" Height="30px" OnClick="btochka_Click" OnClientClick="1" Text="delt" Width="50px" />
+        </p>
+        <p class="text-center">
+            <asp:Button ID="b4" runat="server" Text="4" BackColor="Aqua" Height="30px" OnClick="b4_Click" Width="50px" />
+            <asp:Button ID="b5" runat="server" Text="5" BackColor="Aqua" Height="30px" OnClick="b5_Click" Width="50px" />
+            <asp:Button ID="b6" runat="server" OnClick="b6_Click" Text="6" BackColor="Aqua" Height="30px" Width="50px" />
+            <asp:Button ID="bym" runat="server" Text="*" BackColor="#3399FF" Height="30px" OnClick="bym_Click" Width="50px" />
+            <asp:Button ID="bc" runat="server" BackColor="#0099FF" Height="30px" OnClick="bc_Click" Text="C" Width="50px" />
+        </p>
+        <div class="text-center">
+        <asp:Button ID="b7" runat="server" Text="7" BackColor="Aqua" Height="30px" OnClick="b7_Click" Width="50px" />
+        <asp:Button ID="b8" runat="server" Text="8" BackColor="Aqua" Height="30px" OnClick="b8_Click" Width="50px" />
+        <asp:Button ID="b9" runat="server" Text="9" BackColor="Aqua" Height="30px" OnClick="b9_Click" Width="50px" />
+        <asp:Button ID="bpl" runat="server" Text="+" BackColor="#3399FF" Height="30px" OnClick="bpl_Click" Width="50px" />
+        <asp:Button ID="brav" runat="server" Text="=" BackColor="Lime" Height="30px" OnClick="brav_Click" Width="50px" />
+
+            <br />
+        <br />
+        </div>
+        <div class="text-center">
+            <asp:Button ID="btoch" runat="server" BackColor="Aqua" Height="30px" OnClick="btoch_Click" Text="." Width="67px" />
+        <asp:Button ID="b0" runat="server" Text="0" BackColor="Aqua" Height="30px" OnClick="b0_Click" Width="71px" />
+
+        <asp:Button ID="bmin" runat="server" Text="-" BackColor="#3399FF" Height="30px" OnClick="bmin_Click" Width="50px" />
+            <br />
+        </div>
+
+        <asp:TextBox ID="TextBox2" runat="server" Height="26px" Visible="False"></asp:TextBox>
+        <asp:TextBox ID="TextBox3" runat="server" Height="22px" Visible="False"></asp:TextBox>
+        <asp:TextBox ID="TextBox4" runat="server" OnTextChanged="TextBox4_TextChanged" Visible="False"></asp:TextBox>
+
+    </form>
+</body>
+</html>
